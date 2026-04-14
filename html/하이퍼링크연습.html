@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>하이퍼링크 / 블록vs인라인</title>
+</head>
+<body>
+  <h1>하이퍼링크</h1>
+  <hr>
+  <h2>블록레벨과 인라인레벨</h2>
+  <p>네이버</p>
+  <p>구글</p>
+  <p>다음</p>
+  <hr>
+  <a href="">네이버</a>
+  <a href="">구글</a>
+  <a href="">다음</a>
+  <hr>
+  <h3>하이퍼링크 a anchor</h3>
+  <!-- ul>li*3 -->
+  <ul>
+    <li>하이퍼링크를 지정할 때</li>
+    <li>href 속성</li>
+    <li><pre>href = "URL"</pre></li>
+  </ul>
+  <h4>하이퍼링크 연습</h4>
+  <!-- 
+    url형식
+    프로토콜://도메인/경로/파일명.확장자
+    프로토콜://도메인/경로/
+    -->
+    <!--  <a href="URL" >화면에 표시될 내용</a> -->
+    <a href="https://www.naver.com" title="마우스 후버시 툴팁">네이버1</a>
+    <!-- 
+    target 속성 값. 소대문자 구분함.
+    _self    기본-생략시 적용되는 속성값
+    _blank   새탭에서 열기
+    -->
+    <a href="https://www.naver.com" 
+    title="마우스 후버시 툴팁"
+    target="_blank">네이버2</a>
+    <hr>
+    <h3>이미지에 하이퍼링크</h3>
+    <a href="https://www.google.com/" title="제미나이는구글꺼">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/500px-Google_2015_logo.svg.png" alt="구글로고"></a>
+
+    <h4>전화번호에 연결</h4>
+    <p>tel: 프로토콜은 모바일에서만 사용가능</p>
+    <a href="tel:010-123-4567">010-123-4567</a>
+
+    <h5>인터넷상의 파일이 아닌 동일컴(서버)의 파일 연결</h5>
+    <a href="상대경로연습.html">상대경로연습</a>
+    <a href="../url연습/상대경로연습2.html">상대경로연습2</a>
+    <!-- a태그는 인라인레벨이라 텍스트 크기만큼만 너비 사용함. -->
+
+  </body>
+</html>
