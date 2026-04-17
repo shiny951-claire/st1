@@ -8,6 +8,9 @@
 <body>
   <h1>폼태그</h1>
   <form action="">
+    <!-- fieldset:  입력상자 
+    폼 안에 필드셋은 여러개 올 수 있으나 
+    거의 인풋을 여러개사용-->
     <fieldset>
       <legend>폼의 이름표</legend>
       <p>
@@ -17,9 +20,10 @@
       </p>
       <p>
         <input type="number"><br>
-        <input type="email">
+        <input type="email" placeholder="이메일">
       </p>
       <p>
+        <!-- date: 날짜들어가는 달력나옴, week: 주 선택 -->
         <input type="date" name="" id="">
         <input type="week">
       </p>
@@ -27,7 +31,80 @@
         <input type="color">
       </p>
     </fieldset>
-  </form>
-  
+    <fieldset>
+      <legend>선택상자</legend>
+      <div>
+        <label for="color1">빨강</label>
+        <input type="checkbox" name="color" id="color1" value="">
+        <label for="color2">파랑</label>
+        <input type="checkbox" name="color" id="color2" value="">
+        <label for="color3">노랑</label>
+        <input type="checkbox" name="color" id="color3" value="">
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>라디오버튼</legend>
+      <label for="test1">빨강</label>
+      <input type="radio" name="test" id="test1">
+      <label for="test2">파랑</label>
+      <input type="radio" name="test" id="test2">
+      <label for="test3">노랑</label>
+      <input type="radio" name="test" id="test3">
+    </fieldset>
+    <div>
+      <input type="reset">
+      <input type="submit">
+      <input type="reset" value="취소">
+      <!-- submit 을 누르면 form태그의 action이 작동함-->
+      <input type="submit" value="확인">
+      <!-- <input type="button" value="버튼에 표시되는 값"> -->
+      <input type="button" value="주소찾기">
+      <input type="file" value="찾아보기">
+    </div>
+    <div>
+      <!-- 버튼은 인라인 <button>제목</button> -->
+      <button>제목</button>
+      <button type="submit">확인</button>
+      <button type="reset">취소</button>
+      <button type="button">제목</button>
+      <button type="button">
+        <img src="asset/logo.png" alt=""
+        width="50">
+      </button>
+    </div>
+    <style>
+      button, [type="submit"]{
+        background-color: #f00
+        ;
+      }
+      </style>
+  <div>
+    <select name="" id="">
+      <option value="">패밀리사이트</option>
+      <option value="">네이버</option>
+      <option value="">구글</option>
+      <option value="">다음</option>
+    </select>
+    <!-- <select name="" id="" multiple> -->
+    <select name="" id="" multiple>
+      <option value="">패밀리사이트</option>
+      <option value="">네이버</option>
+      <option value="">구글</option>
+      <option value="">다음</option>
+    </select>
+  </div>
+  <div>
+    <textarea name="" id=""></textarea>
+    <!-- <textarea name="" id="" disabled<-비활성화></textarea> -->
+    <textarea name="" id="" disabled readonly>가나다라마</textarea>
+  </div>
+
+
+<style>
+  /* div{} html시트에서 div태그를 전부 선택하겠다*/
+  div, fieldset{
+    margin-bottom: 15px;
+  }
+</style>
 </body>
 </html>
