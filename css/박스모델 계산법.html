@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>margin</title>
+  <style>
+    /* reset */
+    *{margin: 0; padding: 0;}
+    .box{
+      
+      margin:30px;
+      width: 200px;
+      height: 200px;
+      background-color: #ccc;
+      /* display: inline-block; */
+    }
+    .box1{
+      /* width: 200px;
+        height: 200px; */
+        /* 안쪽여백: 상하 좌우 */
+        /* 수평크기
+        ml 30 brdl 0 pl 20 w 200 pr 20 brdr0 mr 30 =>300
+        개발자도구 바깥여백 빼기 ml mr30+30 240*/
+      
+
+      padding:10px 20px;
+      /* width: 200px;
+        height: 200px; */
+      /* 안쪽여백 10px 20px */
+      /* 수직
+      mt 30 bt 0 pt 10 h200 pb10 bb0 mb30->280 
+      개발자도구 바깥여백 빼기 -60=>220*/
+    
+    }
+    .box2{
+      padding:  10px 20px;
+      box-sizing: content-box;
+    }
+
+    /* box-sizing: content-box 
+    박스모델의 계산법 정의
+    content-box값*/
+    .box3{
+      /* width: 200px;
+        height: 200px; */
+      box-sizing: border-box;
+      padding: 10px 20px;
+    }
+    .box4{
+      /* box-sizing: border-box; */
+      box-sizing: content-box;
+      /* 요소크기width/height=> border+padding+content영역 */
+      width:300px;
+      border: 10px dashed #000;
+      /*
+      em : font-size는 부모를 글자크기 기준
+      박스모달: 자신글자크기 기준
+       */
+      padding:2em 1em /* 16*2 16 */
+    }
+  </style>
+</head>
+<body>
+  <!-- .box.box$*4>lorem15 -->
+  <div class="box box1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, architecto magnam? Explicabo quam non est?</div>
+  <div class="box box2">Asperiores harum dignissimos unde sit tenetur ipsum, suscipit, ducimus porro quibusdam non perspiciatis, et cum!</div>
+  <div class="box box3">Quis eveniet commodi molestiae excepturi repellendus cumque officiis illum assumenda hic. Necessitatibus quis animi laboriosam.</div>
+  <div class="box box4">Non iste exercitationem sunt explicabo optio animi illum magni ut eligendi, magnam dolorem quisquam eum!</div>
+</body>
+</html>
