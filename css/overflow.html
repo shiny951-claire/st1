@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    /* 
+    요소(태그) 크기결정=>박스모델
+    <태그1>내용1<태그2>내용2</태그></태그>
+    태그1
+      ㄴ내용1
+      ㄴ태그2
+        ㄴ내용2
+    boxmodel
+      1. block 
+        줄바꿈 
+        너비는 부모의 콘텐츠영역만큼 사용
+        너비는 부모로부터오고 높이는 자식
+      2. inline : 
+        줄바꿈x
+        너비는 내용만큼
+      3. inline-block
+        줄바꿈x
+        너비와 높이를 지정
+    */
+    /* 
+    요소크기 계산법
+    -수평크기
+    왼쪽마진+왼쪽보더+왼쪽패딩+컨텐트(내용)+우측패딩+우측보더+우측마진
+    -수직크기
+    상단마진+상단보더+상단패딩+컨텐트(내용)+하단패딩+하단보더+하단마진
+        */
+    .box{
+      background-color: #ccc;
+      /* 
+      width/height를 어느 영역까지를 포함할 지 결정
+      box-sizing
+        box-sizing: content-box; 기본값
+        box-sizing: border-box; 크기 변경없이 보더 안에 패딩을 넣어줌. 컨텐츠박스가 작아짐.
+       */
+      width: 300px;
+      height: 150px;
+      box-sizing: border-box;
+      padding: 20px;
+      
+      /* 안쪽여백 상하좌우 모두 20px */
+    }
+    body{margin: 50px;}
+  </style>
+</head>
+<body>
+  <!-- .box{연습} -->
+  <div class="box">연습</div>
+  <!-- 오후수업 -->
+   <div class="overflow-exam">
+    <h1>자식의 크기가 부모의 크기보다 클 때</h1>
+    <!-- .box.box$*4>lorem15 -->
+    <div class="box box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quas reprehenderit nisi sit nam numquam!</div>
+    <div class="box box2">Accusamus quibusdam ratione similique, error consequatur fugiat non modi ducimus ipsam eum ad illum eius!</div>
+    <div class="box box3">Distinctio sit pariatur temporibus at dignissimos. Sed mollitia fugiat pariatur laborum, officiis reprehenderit sint. Blanditiis?</div>
+    <div class="box box4">Similique commodi modi, quo suscipit in reprehenderit. Vel facere aspernatur voluptatem impedit blanditiis laboriosam tempora.impedit blanditiis laboriosam tempora.</div>
+   </div>
+   <style>
+    .overflow-exam  .box{
+      width: 300px;
+      height: 100px;
+      /* height: auto; 기본값.높이는 자식으로부터 와요 */
+      border: 1px solid #000;
+      margin: 50px 0 10px 0;/*상 우 하 좌*/
+    }
+    .box1{
+      /* overflow: visible; */
+      overflow: auto;
+    }
+    .box2{
+      overflow: scroll;
+    }
+    .box3{
+      overflow: visible;
+    }
+    .box4{
+      /* 부모요소보다 넘쳐나는 부분은 보이지 말아라 */
+      overflow: hidden
+    }
+   </style>
+   <div class="box box5">
+    <img src="../html/asset/logo.png" alt="">
+   </div>
+   <style>
+    .box5{
+      overflow-y: hidden;
+    }
+   </style>
+</body>
+</html>
