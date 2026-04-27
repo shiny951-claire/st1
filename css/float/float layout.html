@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float layout</title>
+  <style>
+    /* reset */
+    *{margin: 0;padding: 0;}
+    ol,ul{list-style: none;}
+    /* layout */
+    /* 
+    header 
+    */
+    header{background-color: #ccc; min-height: 100px;}
+    /* 
+    content
+     */
+    .content{
+      background-color: #cfc;
+      width: 1000px;
+      margin: 0 auto;
+    }
+    /* box1 150 box2 650 box3 100=900px 부모 컨텐트보다 작음 */
+    .content .box1{
+      background-color: #68f;
+      min-height: 100px;
+      width: 150px;
+      float:left;/*너 부모나 형제의 왼쪽으로 흘러가라*/
+    }
+    .content .box2{
+      background-color: #6f8;
+      min-height: 200px;
+      width: 650px;
+      float: left;
+      margin: 0 50px;
+    }
+    .content .box3{
+      background-color: #f68;
+      min-height: 300px;
+      width: 100px;
+      float:right;
+       /*너 부모나 형제의 오른쪽으로 위치*/
+      
+    }
+
+    /* float의 문제 해결 */
+    .content::after{
+      content:""; /*빈영역을 반드시 넣어줘야함*/
+      display: block;
+      clear: both;
+    }
+    footer{background-color: #ccc;min-height: 200px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>해더</header>
+    <main class="content">
+      <!-- main: 이 페이지에서 중요내용이다 -->
+      <div class="box box1">왼쪽</div>
+      <div class="box box2">가운데</div>
+      <div class="box box3">오른쪽</div>
+    </main>
+    <footer>푸터</footer>
+  </div>
+</body>
+</html>
