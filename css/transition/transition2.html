@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition 2</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 100px;}
+    .box{
+      /* 글자색을 마젠타로 */
+      color: magenta;
+      /* 글자크기를 html요소 기준으로 3배가 되게 해주세요 */
+      font-size: 3rem;
+      /* 글자를 진하게 쓰세요 .700*/
+      font-weight: 700;
+      /* 자간을 3px */
+      letter-spacing: 3px;
+      /*배경색을 #6f8로 */
+      background-color: #6f8;
+      /* 해당요소의 인라인요소를 요소의 가운데 정렬 */
+      /* 문단 정렬 가운데 */
+      text-align: center;
+    }
+    .box:hover{
+      /* 글자색을 마젠타로 */
+      color: cyan;
+      /* 글자크기를 html요소 기준으로 3배가 되게 해주세요 */
+      font-size: 5rem;
+      /* 글자를 진하게 쓰세요 .700*/
+      font-weight: 400;
+      /* 자간을 3px */
+      letter-spacing: 10px;
+      /*배경색을 #6f8로 */
+      background-color: #f68;
+      /* 해당요소의 인라인요소를 요소의 가운데 정렬 */
+      /* 문단 정렬 가운데 */
+      text-align: right;
+  
+      /* transition  */
+      /* transition: font-size 0.3s, font-weight 0.3s;  */
+      transition: all 0.3s; 
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    SALE
+  </div>
+</body>
+</html>
