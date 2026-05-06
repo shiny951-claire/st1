@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex2 flex 컨테이너와 flex 아이템</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .wrap{margin: 50px;}
+    .container{
+      /* width: auto; 부모의 너비 다 가지고 옴*/
+      /* padding: 1rem; */
+      background-color: #fcc;
+      box-sizing: border-box;
+    }
+    .item{
+      border: 1px solid #000;
+      box-sizing: border-box;
+      /* width: 100px; */
+    }
+    
+    .flex{
+      /* 1.flex선언 : flex box(flex container)라고 선언함 */
+      display: flex;
+      /* 2. flex의 방향 설정 
+        주축 방향의 flex-direction의 방향과 동일
+      */
+      /* flex-direction: row; 기본값 */
+      flex-direction: row;
+      /* flex-direction: column; */
+    
+    /* flex 를 선언하면 즉시 flex container가 됨
+    자식요소에게 별도너비 지정안하면 자동으로 너비 설정됨
+    flex container의 직계자식은 flex의 item이 됨 */
+    
+    /* 5. flex-wrap
+     만약에 item에 flex-shrink:0; flex-grow:0; 설정했을 때
+     부모의 크기보다 넘쳐나는 item 줄바꿈
+    */
+    /* flex-wrap: nowrap; 기본값*/
+    flex-wrap: wrap;
+    /* 6. gap flex 아이템 사이의 여백관리*/
+    gap:5px 10px;
+    /* 7. 아이템 정렬 */
+    }
+    .flex .item{
+      /* 
+    3. flex item 주축크기 확장/축소 결정
+    */
+      /* width: 25%; */
+
+      /* calc(값1 - 값2) 
+      컨테이너에 gap을 지정했을 때 계산식
+      calc(아이템의 크기 - (gap * (단 수 - 1)) / 단 수)
+      */
+      /* 4. 아이템 크기 결정 */
+      width: calc(25% - (10px * (4 - 1)) / 4);
+      /* 아이템을 부모의 공간에 맞게 확장
+      flex-grow: 0; 기본값 */
+      flex-grow: 0;
+      /* 아이템을 부모의 공간에 맞게 축소 */
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!--.container>.item*4>{item$}-->
+    <div class="container flex">
+      <!-- div는 블럭레벨 -->
+      <div class="item">Lorem</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+      <div class="item">Lorem</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+    </div>
+
+  </div>
+</body>
+</html>
