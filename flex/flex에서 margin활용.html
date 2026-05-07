@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex에서 margin활용</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .container{
+      background-color: #ccc;
+      width: 100%; height: 100vh;
+
+      display: flex;
+      /* 2 row, 5줄바꿈 nowrap   */
+      /* 7 정렬 */
+      justify-content: flex-start;
+      /* 
+      교차축 align-items: stretch; 
+      교차크기(width, height): auto;
+      */
+    }
+    .item{
+      /* width: 100px; height: 100px; */
+      background-color: magenta;
+      /* margin: auto; */
+      /* 3 확장0, 축소1(내가 부모보다 크면 줄어들게) */
+      /* 4 flex-basis:auto; */
+      /* flex item이 나의 내용크기만큼 너비차지하겠다. width: auto; */
+      width: 100px;
+      /* flex item이 stretch일 경우 부모의 크기만큼 늘어나라
+      그 외는 내 내용크기가 기본값. flex선언 기본값은 stretch. */
+      /* height: auto; */
+      height: 100px;
+      /* 6 margin */
+      /* margin-top: auto; */
+      margin: auto;
+      /* 플렉스 컨테이너의 남은공간을 바깥여백으로 사용 */
+
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">아이템</div>
+  </div>
+</body>
+</html>
