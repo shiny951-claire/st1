@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex 실습7-상품목록 </title>
+  <link rel="stylesheet" href="../reset.css">
+  <!-- 
+  1. flex 선언 : container
+  2. flex 방향결정(축) container
+  3. 아이템의 축소, 확장을 결정 item
+  4. 아이템의 크기 결정 item
+  5. 아이템 줄바꿈을 결정 container
+  6. 여백관리 gap: container에 부여(margin을 사용해도 됨: item에 부여)
+  7. 정렬 container / item , margin
+  -->
+  
+  <style>
+    /* 모양 */
+    .ec-base-product{background-color: #ccc;}
+    .ec-base-product .prdList{background-color: #fcc;}
+    .ec-base-product .prdList >li{
+      opacity: 0.5;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      background-color: #cff;
+      padding: 1rem;
+    }
+    
+    /* flex */
+    .ec-base-product{}
+
+    /* flex container .prdList */
+    .ec-base-product .prdList{
+      display: flex;
+      /* 2 flex-direction: row; */
+      /* 5 줄바꿈 */
+      flex-wrap: wrap;
+      /* 6 여백 */
+      gap:20px;
+      /* 7 j-c:flex-start; a-items:stretch; */
+
+    }
+    /* flex item  width:auto; height:auto;
+    내용의 크기만큼만 요소의 크기가 되어라 */
+    /* flex item .prdList >li */
+    /* PC에서는 4단, tablet 3단 ,mobile 2단*/
+    .ec-base-product .prdList >li{
+      /* 3 
+      flex-grow: 0;*/
+      /* 아이템을 줄바꿈을 할 경우 shrink가 1 */
+      flex-shrink: 0; 
+      
+      /* 4 크기flex-basis:auto; */
+      width:calc(25% - (20px * (4 - 1) / 4));
+      aspect-ratio: 2/1;
+    }
+    @media (max-width:1023px) {
+      /* tablet 3단 */
+      .ec-base-product .prdList >li{
+      width: :calc(33.33% - (20px * (3 - 1) / 3));}
+    }  /* // @media(max-width:1024px){ */
+
+     @media (max-width:768px){
+      .ec-base-product .prdList >li{
+      width:calc(50% - (20px * (2 - 1) / 2));}
+     }
+  </style>
+</head>
+<body>
+  <div class="ec-base-product">
+    <ul class="prdList">
+      <!-- li*8>{아이템$} -->
+      <li>아이템1</li>
+      <li>아이템2</li>
+      <li>아이템3</li>
+      <li>아이템4</li>
+      <li>아이템5</li>
+      <li>아이템6</li>
+      <li>아이템7</li>
+      <li>아이템8</li>
+    </ul>
+  </div>
+</body>
+</html>
