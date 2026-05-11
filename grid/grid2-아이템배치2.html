@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>grid2 아이템배치</title>
+  <title>grid2-아이템배치2</title>
   <link rel="stylesheet" href="../reset.css">
   <!-- grid
    1. container에게 grid 선언 container
@@ -23,27 +23,44 @@
      }
      .grid-container .item{
       background-color: dodgerblue;
-
+      box-sizing: border-box;
+      border: 4px solid magenta;
      }
 
      /* grid */
      .grid-container{
       display: grid;
+      grid-template-rows: repeat(3, 100px);
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 100px;
+    
 
      }
      /* grid item */
+     /* display: grid; 요소의 직계자식만이 그리드 아이템 */
      .grid-container .item{
+
 
      }
      .grid-container .item:nth-child(1){
+      /* grid-column: 1/5; */
+      /* grid-column: 1/span 4; */
+      grid-column: 1/-1;
      }
      .grid-container .item:nth-child(2){
+      /* grid-row: 2/3; */
+      grid-column: 1/3;
      }
      .grid-container .item:nth-child(3){
+      grid-column: 1/span 2;
      }
      .grid-container .item:nth-child(4){
+      grid-column: 3/4;
+      grid-row: 2/4;
      }
      .grid-container .item:nth-child(5){
+      grid-column: 4;
+      grid-row: 2/span 2;
      }
   </style>
 </head>
