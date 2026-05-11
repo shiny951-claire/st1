@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>grid1-행열의 줄칸 크기 키워드</title>
+  <title>grid2-아이템배치2</title>
   <link rel="stylesheet" href="../reset.css">
   <!-- grid
    1. container에게 grid 선언 container
@@ -20,59 +20,55 @@
      }
      .grid-container{
       background-color: #ccc;
-
      }
      .grid-container .item{
       background-color: dodgerblue;
-      border: 1px solid magenta;
       box-sizing: border-box;
-
+      border: 4px solid magenta;
      }
 
      /* grid */
      .grid-container{
       display: grid;
-      /* 2 */
       grid-template-rows: repeat(3, 100px);
-      /* 크기 auto: 컨테이너에 남은 공간. 훗날 6.정렬에 연관됨 */
-      grid-template-columns: 100px auto 2rem;
-      /* fr */
-      grid-template-columns: 3fr 3fr 3fr 3fr;
-      /* repeat */
-      grid-template-columns: repeat(4, 3fr);
-      /* minmax(최소값, 최대값) 
-      최소값 fr단위를 사용하지 못합니다.
-      */
-      grid-template-columns: repeat(4, minmax(150px, 1fr));
-      grid-template-columns: repeat(3, minmax(150px, 33.33%));
-      /* fit-content(최대크기) 
-        아이템의 내용이 최대크기보다 크지 않을 경우, content(내용)에 맞추고 내용이 제한한 최대크기보다 커질 때는 최대크기만 유지
-      */
-      /* 300px 보다 내용이 작을 경우 내용크기, 300이상이면 300까지만 커짐 */
-      grid-template-columns: repeat(3, fit-content(300px));
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 100px;
+    
 
      }
      /* grid item */
+     /* display: grid; 요소의 직계자식만이 그리드 아이템 */
      .grid-container .item{
+
 
      }
      .grid-container .item:nth-child(1){
+      /* grid-column: 1/5; */
+      /* grid-column: 1/span 4; */
+      grid-column: 1/-1;
      }
      .grid-container .item:nth-child(2){
+      /* grid-row: 2/3; */
+      grid-column: 1/3;
      }
      .grid-container .item:nth-child(3){
+      grid-column: 1/span 2;
      }
      .grid-container .item:nth-child(4){
+      grid-column: 3/4;
+      grid-row: 2/4;
      }
      .grid-container .item:nth-child(5){
+      grid-column: 4;
+      grid-row: 2/span 2;
      }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="grid-container">
-      <div class="item">Lorem ipsum dolor sit.</div>
-      <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, odio.</div>
+      <div class="item">아이템1</div>
+      <div class="item">아이템2</div>
       <div class="item">아이템3</div>
       <div class="item">아이템4</div>
       <div class="item">아이템5</div>
