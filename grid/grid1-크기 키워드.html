@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid1-행열의 줄칸 크기 키워드</title>
+  <link rel="stylesheet" href="../reset.css">
+  <!-- grid
+   1. container에게 grid 선언 container
+   2. 행열 줄칸갯수, 크기 정함 container
+   3. 암시적 그리드 선언(생략가능)- 줄이 몇 줄이 생길 지 모르기때문에 필요함 container
+   4. 아이템배치 item
+   5. 여백
+   7. 정렬
+  -->
+  <style>
+     /* 모양 */
+     .wrap{
+      margin: 50px;
+     }
+     .grid-container{
+      background-color: #ccc;
+
+     }
+     .grid-container .item{
+      background-color: dodgerblue;
+      border: 1px solid magenta;
+      box-sizing: border-box;
+
+     }
+
+     /* grid */
+     .grid-container{
+      display: grid;
+      /* 2 */
+      grid-template-rows: repeat(3, 100px);
+      /* 크기 auto: 컨테이너에 남은 공간. 훗날 6.정렬에 연관됨 */
+      grid-template-columns: 100px auto 2rem;
+      /* fr */
+      grid-template-columns: 3fr 3fr 3fr 3fr;
+      /* repeat */
+      grid-template-columns: repeat(4, 3fr);
+
+     }
+     /* grid item */
+     .grid-container .item{
+
+     }
+     .grid-container .item:nth-child(1){
+     }
+     .grid-container .item:nth-child(2){
+     }
+     .grid-container .item:nth-child(3){
+     }
+     .grid-container .item:nth-child(4){
+     }
+     .grid-container .item:nth-child(5){
+     }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid-container">
+      <div class="item">아이템1</div>
+      <div class="item">아이템2</div>
+      <div class="item">아이템3</div>
+      <div class="item">아이템4</div>
+      <div class="item">아이템5</div>
+      <div class="item">아이템6</div>
+      <div class="item">아이템7</div>
+      <div class="item">아이템8</div>
+
+    </div>
+  </div>
+  
+</body>
+</html>
