@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid4-그리드 영역grid-area</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .wrap{
+      /* 1 */
+      display: grid;
+      /* 2 행열 갯수, 크기 
+      3줄 헤더, 콘텐츠, 푸터
+      2칸 1c 고정픽셀250px 2c 여유공간 다
+      */
+      grid-template-rows: 150px 500px 300px;
+      grid-template-columns: 250px 1fr;
+      /* 7그리드 영역이름 활용(생략가능) 
+       "": 행 열은 "안 에 작 성" */
+      grid-template-areas:
+      "hd hd"
+      "lnb mc"
+      ". footer"
+      ;
+    }
+    header{
+      background-color: #ccc;
+      grid-area: hd;
+    }
+    aside{
+      background-color: #fcc;
+      grid-area: lnb;
+    }
+    .main-content{
+      background-color: #ccf;
+      grid-area: mc;
+    }
+    footer{
+      background-color: #cfc;
+      grid-area: footer;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>헤더</header>
+    <aside>LNB</aside>
+    <main class="main-content">페이지내용</main>
+    <footer>푸터</footer>
+  </div>
+</body>
+</html>
