@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>swiper연습2-여러개슬라이드 보여주기</title>
+  <title>swiper연습2-wconcept</title>
   <link rel="stylesheet" href="../reset.css">
   <!-- swiperjs css -->
   <link
@@ -117,14 +117,23 @@
     <div class="swiper-pagination"></div>
   
     <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+     <div class="swiper-button-prev">
+      <img src="images/arrow_back_ios_48dp.png" alt="이전슬라이드로 이동">
+      </div>
+    <div class="swiper-button-next">
+      <img src="images/arrow_forward_ios_48dp.png" alt="다음슬라이드로 이동">
+    </div>
   
     <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
+     <!-- pagination을 progressbar로 대체했기때문에 요소제거 -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+
   </div> <!--//swiper -->
 </div> <!-- //visual-section -->
+
+
 <!-- swiper실행 -->
+ 
 <script>
   const swiper1 = new Swiper('.swiper1', {
   // Optional parameters
@@ -146,18 +155,24 @@
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    // 불릿대신 progressbar
+    type: 'progressbar',
+    clickable: true,
   },
 
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+    //아이콘바꿈. 내가 입력한 img태그 이미지 활용
+    addIcon:false,
   },
 
   // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+  // progressbar일 때 삭제
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
 });
 </script>
 </body>
