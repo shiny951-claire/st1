@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>swiper기본</title>
+  <title>swiper 연습4-불릿대신 progress</title>
   <link rel="stylesheet" href="../reset.css">
   <!-- swiperjs css -->
   <link
@@ -38,7 +38,8 @@
   <div class="swiper-button-next"></div>
 
   <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
+   <!-- 만약 페이지네이션을 프로그레스바로 할 경우 스크롤바 요소는 제거해야함 -->
+  <!-- <div class="swiper-scrollbar"></div> -->
 </div>
 <script>
   const swiper1 = new Swiper('.swiper1', {
@@ -49,6 +50,8 @@
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    type: "progressbar",
+    clickable: true,
   },
 
   // Navigation arrows
@@ -58,9 +61,9 @@
   },
 
   // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
 });
 </script>
 </body>
