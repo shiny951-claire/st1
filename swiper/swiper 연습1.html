@@ -105,7 +105,15 @@
   const swiper1 = new Swiper('.swiper1', {
   // Optional parameters
   direction: 'horizontal',
+  //무한반복
   loop: true,
+
+  //auto play
+  autoplay: {
+        // delay: 2500,
+        dalay: 1000,
+        disableOnInteraction: false,
+      },
 
   // If we need pagination
   pagination: {
