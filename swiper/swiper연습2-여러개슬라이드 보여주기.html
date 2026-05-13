@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>swiper연습2-여러개슬라이드 보여주기</title>
+  <link rel="stylesheet" href="../reset.css">
+  <!-- swiperjs css -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
+<!-- swiperjs  스크립트 설치 -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<style>
+  /* 
+    1. .swiper-slide 수평으로 나란하게
+      문제
+       1. 1슬라이드 나머지 보이지 않음
+       2. .swiper-slide
+    2. 1번슬라이드가 브라우저 왼쪽:0이 아니라 기존스킨의 너비에 맞춰서 시작했으면.
+      문제
+       1.swiper 브라우저 다 사용
+       2.슬라이드 진행 기존스킨의 너비만큼만
+    3. swiper view 3개 slide가 표시되게 하고(3단)
+    4. swiper-slide 후손인 img 가 swiper-slide의 너비를 따르지 않음
+      문제
+       1.swiper-slide>a        swiper-slide>a>img  가 inline
+    5.swiper-slide 사이에 여백
+      문제
+       1.swiper에서는 아이템간 여백을 margin-right로 지정
+    6.수평스크롤바 없애야함
+  */
+  /* 슬라이드 위치 확인 */
+  /* .visual-section .swiper-slide{
+    position: relative; 
+  }
+  .visual-section .swiper-slide span{
+    position: absolute;
+    left: 0; top: 0;
+    background-color: #fff;
+  } */
+/* ↑슬라이드 위치 확인후 제거할 것 */
+
+.visual-section{
+  /* 문제2-1해결 */
+  width: 100% !important;
+  max-width: 100% !important;
+  /* 문제6  해결 */
+  overflow: hidden;
+}
+  .visual-section .swiper {
+    /* 문제1-1 해결 */
+    overflow: visible;
+    /* 문제2-2 해결 */
+    max-width: 1420px;
+    width: 92%;
+  }
+
+.visual-section .swiper-wrapper{
+  /* 5 swiper작동을 위해서는 gap을 지정하지 말고 spaceBetween속성을 지정*/
+  /* gap: 20px; */
+}
+.visual-section .swiper-slide{
+  /* 문제1-2 해결 */
+  /* width: auto; */
+  /* 3 */
+  /* 3. swiper를 사용하면 slidePerView를 사용. width를 지정해도 무시됨 */
+  /* width: 33.33%; */
+/*  */
+}
+.visual-section .swiper-slide >a{
+  /* 4 */
+  display: block;
+}
+.visual-section .swiper-slide >a>img{
+  /* 4 */
+  display: block;
+  width: 100%;
+  }
+</style>
+</head>
+<body>
+  <!-- Slider main container -->
+<div class="section visual-section">
+  <div class="swiper swiper1">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <a href="">
+          <img src="https://picsum.photos/400/500?random=1" alt="">
+        <span>1번슬라이드</span></a></div>
+      <div class="swiper-slide">
+        <a href="">
+          <img src="https://picsum.photos/400/500?random=2" alt="">
+          <span>2번슬라이드</span></a></div>
+      <div class="swiper-slide">
+        <a href="">
+          <img src="https://picsum.photos/400/500?random=3" alt="">
+          <span>3번슬라이드</span></a></div>
+      <div class="swiper-slide">
+        <a href="">
+          <img src="https://picsum.photos/400/500?random=4" alt=""></a></div>
+      <div class="swiper-slide">
+        <a href="">
+          <img src="https://picsum.photos/400/500?random=5" alt=""></a></div>
+      <div class="swiper-slide">
+        <a href="">
+          <img src="https://picsum.photos/400/500?random=6" alt=""></a></div>
+  
+    </div>
+    <!-- //swiper-wrapper -->
+
+
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div> <!--//swiper -->
+</div> <!-- //visual-section -->
+<!-- swiper실행 -->
+<script>
+  const swiper1 = new Swiper('.swiper1', {
+  // Optional parameters
+  direction: 'horizontal',
+
+  //swiper안에 몇개 slide보여줄지 결정
+  //3을 위해서 추가
+  slidesPerView: 3,
+
+  //5여백
+  //swiper에서는 아이템간 여백을 margin-right로 지정. 단위 안씀
+  spaceBetween: 20,
+
+  loop: true,
+  // 현재슬라이드 중앙에 오도록
+  // swiper시작할 때 1번 슬라이드 왼쪽에 마지막 슬라이드 표시
+  centeredSlides: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+</script>
+</body>
+</html>
