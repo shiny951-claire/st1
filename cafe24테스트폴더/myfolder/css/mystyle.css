@@ -2,18 +2,18 @@
 @import url(ub-variables.css);
 
 .card {
-  background-color: #cff;
+  /* background-color: #cff;
   box-sizing: border-box;
   border: var(--border);
   min-height: 300px;
-  opacity: 0.5;
+  opacity: 0.5; */
 
 }
 
 .dan-section .flex {
-  background-color: #f00;
+  /* background-color: #f00;
   box-sizing: border-box;
-  border: 1px solid #000;
+  border: 1px solid #000; */
 }
 
 /* 공통 */
@@ -47,7 +47,46 @@
 }
 
 .dan-section .item .thumb {}
+.dan-section .item .thumb .xans-smart-banner-admin {
+  margin-bottom: 0;
+}
 
 .dan-section .item .thumb img {}
 
 .dan-section .item .desc {}
+
+/* 1024 이하에서  
+1. dan-section 일렬로 표시되고
+   문제1. 브라우저 크기가 줄어들면 줄어드는 이미지 크기
+
+2. 화면에 모바일에서 1.2개정도 보이게 col-md-10 html 추가
+   태블릿에서도 1.8개정도 col-lg-7 html 추가
+3. 부드러운 스크롤링
+   문제1 스크롤바
+   문제2 
+*/
+@media (max-width:1024px){
+  /* .dan-section */
+  .dan-section .flex {
+    width: 100%;
+    /* 3문제1 */
+    /* 부드러운 스크롤링을 위한 전제 조건 */
+    overflow-x: auto;
+    /* 3문제2 */
+    /* 부드러운 스크롤링 css */
+    scroll-behavior: smooth;
+    /* 3문제2 스크롤 될 때 요소가 snap 타입(화면이 넘어가다 특정포인트에 맞춤)  */
+    scroll-snap-type: x mandatory;
+    
+  }
+  .dan-section .flex .item{
+    /* 1 문제1 해결 */
+    flex-shrink: 0;
+    /* 3 문제2 컨테이너와 아이템의 스크롤 snap정렬 */
+    scroll-snap-align: center;
+  }
+}
+
+@media (max-width:768px){
+
+}
