@@ -24,7 +24,23 @@
 
 .dan-section {}
 
+.dan-section .flex>.item {
+  flex: auto;
+}
 
+/* 단 썸네일의 크기가 달라지는 문제 때문에 padding값 수정 문제 발생 */
+/* .dan-section .item:first-child {
+  padding-left: 0;
+}
+.dan-section .item:last-child {
+  padding-right: 0;
+} */
+
+/* html의 flex 컨테이너에게 .gap- 으로 지정 */
+.dan-section .flex .item[class*="col-"] {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 .dan-section .item {
   /* flex: none; */
