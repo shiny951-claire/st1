@@ -1,19 +1,9 @@
 /* 테스트 후 삭제 */
 @import url(ub-variables.css);
-
-.card {
-  /* background-color: #cff;
+.ub-style{
+  background-color: #ccc;
+  border: 1px solid #000;
   box-sizing: border-box;
-  border: var(--border);
-  min-height: 300px;
-  opacity: 0.5; */
-
-}
-
-.dan-section .flex {
-  /* background-color: #f00;
-  box-sizing: border-box;
-  border: 1px solid #000; */
 }
 
 /* 공통 */
@@ -55,24 +45,30 @@
 
 .dan-section .item .desc {}
 
-/* 1024 이하에서  
-1. dan-section 일렬로 표시되고
-   문제1. 브라우저 크기가 줄어들면 줄어드는 이미지 크기
+/* .section.ub-style 스타일 */
+.ub-style{}
+.ub-style .ub-style-inner{
 
-2. 화면에 모바일에서 1.2개정도 보이게 col-md-10 html 추가
-   태블릿에서도 1.8개정도 col-lg-7 html 추가
-3. 부드러운 스크롤링
-   문제1 스크롤바 표시
-   문제2 css로 부드러운 스크롤링
-*/
+}
+/* .section이 브라우저를 다 차지할 때 정렬을 위한 .ub-style-inner*/
+@media (min-width:1024px){
+#contents > .section_full.ub-style .ub-style-inner {max-width:1420px;
+  width:92%;
+  margin-left:auto;
+  margin-right:auto;
+  
+}
+}
+
+/* 미디어쿼리 */
+
+
 @media (max-width:1024px){
   /* .dan-section */
   .dan-section .flex {
     width: 100%;
-    /* 3문제1 */
     /* 부드러운 스크롤링을 위한 전제 조건 */
     overflow-x: auto;
-    /* 3문제2 */
     /* 부드러운 스크롤링 css */
     scroll-behavior: smooth;
     /* 3문제2 스크롤 될 때 요소가 snap 타입(화면이 넘어가다 특정포인트에 맞춤)  */
@@ -80,7 +76,6 @@
     
   }
   .dan-section .flex .item{
-    /* 1 문제1 해결 */
     flex-shrink: 0;
     /* 3 문제2 컨테이너와 아이템의 스크롤 snap정렬 */
     scroll-snap-align: center;
