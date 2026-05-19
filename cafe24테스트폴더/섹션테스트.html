@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="/layout/basic/css/ec-base-product.css" />
     <link rel="stylesheet" href="/layout/basic/css/ec-base-prdInfo.css" />
     <link rel="stylesheet" href="/layout/basic/css/ec-base-paginate.css" />
+    <!-- 섹션타이틀 + 탭메뉴를 위치 -->
+    <link rel="stylesheet" href="/layout/basic/css/main.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -69,6 +71,7 @@
     <!--ez-favicon]-->
     <!--@js(/ez/init.js)-->
   </head>
+
   <body class="theme01" data-ez-theme="theme01">
     <div id="skipNavigation">
       <p><a href="#category">전체상품목록 바로가기</a></p>
@@ -102,6 +105,78 @@
               </div>
             </div>
           </section>
+
+          <!-- 섹션 제목+탭메뉴 -->
+          <section class="section ub-style main_product_category">
+            <div
+              class="main_product_inner ez-align-left"
+              data-ez-role="ez-align"
+              data-ez-align="left"
+            >
+              <div class="main_title">
+                <!-- 세일상품 타이틀 수정하는곳 -->
+                <div class="main_title_txt01" data-ez-role="title">
+                  MD's 추천
+                </div>
+                <div class="main_title_txt02" data-ez-role="subtitle">
+                  이번 시즌 주목받는 상품을 만나 보세요
+                </div>
+              </div>
+              <!-- //main_title -->
+
+              <ul class="main_product_tab" data-ez-role="tab-list">
+                <li data-ez-role="tab-item">
+                  <button
+                    type="button"
+                    class="button active"
+                    data-id="tabContent1"
+                    data-ez-role="name"
+                    data-name="26SS 신상"
+                  >
+                    26SS 신상
+                  </button>
+                </li>
+                <li data-ez-role="tab-item">
+                  <button
+                    type="button"
+                    class="button"
+                    data-id="tabContent2"
+                    data-ez-role="name"
+                    data-name="가디건"
+                  >
+                    가디건
+                  </button>
+                </li>
+                <li data-ez-role="tab-item">
+                  <button
+                    type="button"
+                    class="button"
+                    data-id="tabContent3"
+                    data-ez-role="name"
+                    data-name="하객룩"
+                  >
+                    하객룩
+                  </button>
+                </li>
+
+                <li
+                  data-ez-role="tab-item"
+                  data-id="tabContent1775013089723"
+                  data-name="새로운 카테고리"
+                >
+                  <button
+                    type="button"
+                    class="button"
+                    data-id="tabContent1775013089723"
+                    data-ez-role="name"
+                    data-name="새로운 카테고리"
+                  >
+                    새로운 카테고리
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </section>
           <!-- //.section마감 -->
           <!-- 여기서 작업 완료 -->
         </div>
@@ -124,5 +199,8 @@
     <link rel="stylesheet" href="/myfolder/css/ub-variables.css" />
     <link rel="stylesheet" href="/myfolder/css/ub-grid-system.css" />
     <link rel="stylesheet" href="/myfolder/css/mystyle.css" />
+    <!--@css(/myfolder/css/ub-variables.css)-->
+    <!--@css(/myfolder/css/ub-grid-system.css)-->
+    <!--@css(/myfolder/css/mystyle.css)-->
   </body>
 </html>
