@@ -1,5 +1,4 @@
 /* 테스트 후 삭제 */
-@import url(ub-variables.css);
 
 .ub-style {
   background-color: #ccc;
@@ -11,6 +10,24 @@
 .ub-style+.ub-style {
   margin-top: 50px;
 }
+/* 탭 최상위 컨테이너 */
+.ub-style.ub-style.main_product_category{
+  box-sizing: border-box;
+  border: 1px solid #000;
+  background-color: #cff;
+}
+/* (탭메뉴버튼과 섹션타이틀)의 컨테이너 */
+.ub-style.main_product_category .main_product_inner{
+  box-sizing: border-box;
+  border: 1px solid #000;
+  background-color: #fcf;
+}
+/* 탭UI의 탭컨텐츠 컨테이너 */
+.ub-style.main_product_category .content_list{
+  box-sizing: border-box;
+  border: 1px solid #000;
+  background-color: #ffc;
+}
 
 /* 공통 */
 /* 타이포그라피 */
@@ -21,6 +38,7 @@ body,
 code,
 button {
   font-family: "Poppins", "Pretendard Variable", Pretendard, Arial, sans-serif !important;
+  /* font-family: "Pretendard Variable", Pretendard, Arial, sans-serif !important; */
 }
 
 /* 단배너 css */
@@ -80,31 +98,52 @@ button {
 }
 
 /* .ub-style .main_title  */
-.ub-style .main_title {}
-
-.ub-style .main_title.flex {
-  align-items: end;
+.ub-style .main_title.main_title_direction_row{
+  display: flex;
   justify-content: start;
+  align-items: end;
 }
-
-.ub-style .main_title.flex .main_title_txt02 {
-  margin-top: 0;
+.ub-style .main_title_direction_row [class*="main_title_"]:last-of-type{
   margin-left: 10px;
 }
-
-.ub-style .main_title .main_title_txt01 {
-  /* font-size: 32px;
-  font-weight: 700;
-  line-height: 1;
-  color: #000; */
+.ub-style .main_title.main_title_direction_column{
+  display: block;
+}
+.ub-style .main_title_direction_column [class*="main_title_"]:last-of-type{
+  margin-top: 10px;
+  margin-left: 0px;
 }
 
-.ub-style .main_title .main_title_txt02 {
-  /* font-size: 20px;
-  font-weight: 400;
-  line-height: 1;
-  color:#999 */
+/* TAB UI */
+/* 메인분류 중 선택된 메인분류의 상품목록을 탭UI 표시 */
+/* 탭 최상위 컨테이너 */
+.ub-style.main_product_category{
+  display: flex;
 }
+#contents .ub-style.main_product_category.tab-direction-row{
+  flex-direction: row;
+}
+#contents .ub-style.main_product_category.tab-direction-column{
+  flex-direction: column;
+}
+
+/* 메인타이틀(섹션타이틀), main_product_tab(탭메뉴버튼)의 컨테이너 */
+.ub-style.main_product_category .main_product_inner{}
+.ub-style.main_product_category .main_product_inner .main_title{}
+.ub-style.main_product_category .main_product_inner .main_title .main_title_txt01{}
+.ub-style.main_product_category .main_product_inner .main_title .main_title_txt02{}
+.ub-style.main_product_category .main_product_inner .main_product_tab{}
+.ub-style.main_product_category .main_product_inner .main_product_tab li{}
+.ub-style.main_product_category .main_product_inner .main_product_tab li .button{}
+/* 선택된 메뉴 */
+.ub-style.main_product_category .main_product_inner .main_product_tab li .button.active{}
+
+/* 탭UI의 탭컨텐츠 컨테이너 */
+.ub-style.main_product_category .content_list{}
+.ub-style.main_product_category .content_list .tabcontent {}
+/* 선택된 탭메뉴 */
+.ub-style.main_product_category .content_list .tabcontent.active{}
+
 
 /* 미디어쿼리 */
 
